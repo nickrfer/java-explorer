@@ -1,0 +1,27 @@
+{
+  "name": "java-api-explorer",
+  "version": "0.0.1",
+  "description": "This work in progress will let the user explore the java 6, 7 and 8 APIs, and it is based on the project https://github.com/winterbe/java8-explorer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickrfer/java-api-explorer.git"
+  },
+  "keywords": [
+    "Java",
+    "API",
+    "Explorer"
+  ],
+  "author": "nickrfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickrfer/java-api-explorer/issues"
+  },
+  "homepage": "https://github.com/nickrfer/java-api-explorer#readme",
+  "devDependencies": {
+    "request": "^2.79.0"
+  }
+}
