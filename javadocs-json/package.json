@@ -1,0 +1,29 @@
+{
+  "name": "javadocs-json",
+  "version": "0.0.1",
+  "description": "Reads the java docs api and parses it's information to JSON.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickrfer/java-api-explorer.git"
+  },
+  "keywords": [
+    "Java",
+    "API",
+    "Explorer",
+    "Java Docs",
+    "JSON"
+  ],
+  "author": "nickrfer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickrfer/java-api-explorer/issues"
+  },
+  "homepage": "https://github.com/nickrfer/java-api-explorer#readme",
+  "devDependencies": {
+    "request": "^2.79.0"
+  }
+}
