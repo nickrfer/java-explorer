@@ -1,5 +1,5 @@
 {
-  "name": "java-api-explorer",
+  "name": "java-explorer",
   "version": "0.0.1",
   "description": "This work in progress will let the user explore the java 6, 7 and 8 APIs, and it is based on the project https://github.com/winterbe/java8-explorer.",
   "main": "index.js",
