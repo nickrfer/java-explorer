@@ -42,18 +42,19 @@ function crawApiDetails(paths, javaVersion, currentIndex) {
         return;
     }
     apiRequest.onRequestSuccess(paths[currentIndex], function(html) {
-        parseApiDetails(html, javaVersion);
+        parseApiDetails(paths[currentIndex], html, javaVersion);
         // the if bellow is used for development, comment out in production
-        if (apiJson["types"].length > 20) {
+        if (apiJson["types"].length > 3) {
           currentIndex += 999999;
         }
         crawApiDetails(paths, javaVersion, ++currentIndex);
     });
 }
 
-function parseApiDetails(html, javaVersion) {
-  var typeJson = apiDetailCrawler.crawl(html, javaVersion);
-  if (typeJson != null) {
+function parseApiDetails(path, html, javaVersion) {
+  var apiType = apiDetailCrawler.crawl(path, html, javaVersion);
+  if (apiType != null) {
+    var typeJson = JSON.stringify(apiType);
     apiJson["types"].push(typeJson);
     console.log(typeJson);
   }
