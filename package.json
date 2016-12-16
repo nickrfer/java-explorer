@@ -2,9 +2,8 @@
   "name": "java-explorer",
   "version": "0.0.1",
   "description": "This work in progress will let the user explore the java 6, 7 and 8 APIs, and it is based on the project https://github.com/winterbe/java8-explorer.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack -d --watch & live-server --entry-file=404.html --port=4000"
   },
   "repository": {
     "type": "git",
@@ -20,8 +19,25 @@
   "bugs": {
     "url": "https://github.com/nickrfer/java-api-explorer/issues"
   },
-  "homepage": "https://github.com/nickrfer/java-api-explorer#readme",
+  "dependencies": {
+    "current-input": "^1.1.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
+  },
   "devDependencies": {
-    "request": "^2.79.0"
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^6.0.0",
+    "live-server": "^1.0.0",
+    "webpack": "^1.13.1"
   }
 }
