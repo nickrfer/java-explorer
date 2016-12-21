@@ -5,7 +5,7 @@ function Home() {
   const reactLink = 'https://github.com/facebook/react';
   const reactRouterLink = 'https://github.com/reactjs/react-router';
   const ghPagesLink = 'https://pages.github.com/';
-  const repoReadmeLink = 'https://github.com/rafrex/spa-github-pages#readme';
+  const repoReadmeLink = 'https://github.com/nickrfer/java-explorer#readme';
 
   return (
     <div>
