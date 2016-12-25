@@ -15,6 +15,11 @@ basePath[exports.java8] = 'https://docs.oracle.com/javase/8/docs/api';
 var apiJson;
 var flushJsonCallback;
 
+function ApiPath(detailPath, name) {
+    this.detailPath = detailPath;
+    this.name = name;
+}
+
 exports.crawl = function(javaVersion, callback) {
     flushJsonCallback = callback;
     apiJson = {"types" : []};
@@ -29,8 +34,10 @@ function parseAllClasses(html, path, javaVersion) {
   var paths = [];
   $('a').each(function(i, element) {
       var a = $(this);
-      var detailPath = path + '/' + a.attr('href');
-      paths.push(detailPath);
+      var href = a.attr('href');
+      var apiName = href.substring(0, href.indexOf('.html'));
+      var apiPath = new ApiPath(path + '/' + href, apiName);
+      paths.push(apiPath);
   });
   console.log(paths);
   crawApiDetails(paths, javaVersion, 0);
@@ -41,7 +48,7 @@ function crawApiDetails(paths, javaVersion, currentIndex) {
         flushJsonCallback(apiJson);
         return;
     }
-    apiRequest.onRequestSuccess(paths[currentIndex], function(html) {
+    apiRequest.onRequestSuccess(paths[currentIndex].detailPath, function(html) {
         parseApiDetails(paths[currentIndex], html, javaVersion);
         // the if bellow is used for development, comment out in production
         if (apiJson["types"].length > 3) {

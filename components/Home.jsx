@@ -1,5 +1,22 @@
 import React from 'react';
+import Griddle from 'griddle-react';
 import { Link } from 'react-router';
+/*import JavaDocsJson from './JavaDocsJson';
+
+var apiTypes = JSON.parse(JavaDocsJson.get());
+console.log(apiTypes);*/
+var apiTypes = [
+  {
+    "id": 0,
+    "name": "Mayer Leonard",
+    "city": "Kapowsin",
+    "state": "Hawaii",
+    "country": "United Kingdom",
+    "company": "Ovolo",
+    "favoriteNumber": 7
+  }
+];
+
 
 function Home() {
   const reactLink = 'https://github.com/facebook/react';
@@ -9,16 +26,8 @@ function Home() {
 
   return (
     <div>
-      <p>
-        This is an example single page app built
-        with <a href={reactLink}>React</a> and {' '}
-        <a href={reactRouterLink}>React&nbsp;Router</a> using {' '}
-        <code>browserHistory</code>. Navigate with the links below and
-        refresh the page or copy/paste the url to test out the redirect
-        functionality deployed to overcome {' '}
-        <a href={ghPagesLink}>GitHub&nbsp;Pages</a> incompatibility
-        with single page apps (like this one).
-      </p>
+      <Griddle results={apiTypes} tableClassName="table" showFilter={true}
+        showSettings={true} columns={["name"]}/>
       <p>
         Please see the <a href={repoReadmeLink}>repo readme</a> for
         instructions on how to use this boilerplate

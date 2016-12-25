@@ -1,6 +1,7 @@
 var cheerio = require('cheerio');
 
-function ApiType(fullType, packageName, description, path, newType) {
+function ApiType(name, fullType, packageName, description, path, newType) {
+    this.name = name;
     this.fullType = fullType;
     this.packageName = packageName;
     this.description = description;
@@ -8,7 +9,7 @@ function ApiType(fullType, packageName, description, path, newType) {
     this.newType = newType;
 }
 
-exports.crawl = function(path, html, javaVersion, path) {
+exports.crawl = function(apiPath, html, javaVersion) {
     var $ = cheerio.load(html);
     if ($("body:contains('" + javaVersion + "')").length > 0) {
       var fullType = $('h2 .header').text();
@@ -16,7 +17,7 @@ exports.crawl = function(path, html, javaVersion, path) {
       var description = $('.description ul li pre').text();
       var newType = isNewType($, javaVersion);
 
-      return new ApiType(fullType, packageName, description, path, newType);
+      return new ApiType(apiPath.name, fullType, packageName, description, apiPath.detailPath, newType);
     }
 }
 
