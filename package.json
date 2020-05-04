@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "This work in progress will let the user explore the java 6, 7 and 8 APIs, and it is based on the project https://github.com/winterbe/java8-explorer.",
   "scripts": {
-    "start": "webpack -d --watch & live-server --entry-file=404.html --port=4000"
+    "start": "webpack -d --watch & live-server --entry-file=404.html --port=4000",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,8 @@
     "jsonfile": "^2.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-router": "^2.4.1"
+    "react-router": "^2.4.1",
+    "snyk": "^1.317.0"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
@@ -42,5 +45,6 @@
     "eslint-plugin-react": "^6.0.0",
     "live-server": "^1.0.0",
     "webpack": "^1.13.1"
-  }
+  },
+  "snyk": true
 }
